@@ -9,11 +9,26 @@ Resources:
       CodeUri: CRUDFunction
       Runtime: go1.x
       Events:
-        CRUDApi:
+        GetAllOrders:
           Type: Api
           Properties:
             Path: /orders
             Method: GET
+        GetAnOrder:
+          Type: Api
+          Properties:
+            Path: /orders/{id}
+            Method: GET
+        DeleteAnOrder:
+          Type: Api
+          Properties:
+            Path: /orders/{id}
+            Method: DELETE
+        CreateOrUpdateOrder:
+          Type: Api
+          Properties:
+            Path: /orders
+            Method: PUT
       Policies:
       - DynamoDBCrudPolicy:
           TableName:
